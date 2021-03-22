@@ -230,4 +230,16 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Currencies exchange rates settings
+    |--------------------------------------------------------------------------
+    */
+
+    'xrates' => [
+        'currencies' => env('XRATES_CURRENCIES', 'http://www.cbr.ru/scripts/XML_valFull.asp'),
+        'rates' => env('XRATES_RATES', 'http://www.cbr.ru/scripts/XML_daily.asp'),
+        'queryformat' => json_decode(env('XRATES_QUERYFORMAT', '{"date_req": "d/m/Y"}'), true),
+        'timeout' => (int) env('XRATES_TIMEOUT', 30),
+    ],
 ];
